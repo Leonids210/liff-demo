@@ -68,10 +68,24 @@
     }
 
     async function sendMsg() {
+      if (liff.getContext().type !== "none" && liff.getContext().type !== "external") {
+        // max 5 items
+        await liff.sendMessages([
+          {
+            "type": "text",
+            "text": "Hello, World!",
+          },
+          {
+            "type": "sticker",
+            "stickerId": 1,
+            "packageId": 1
+          }
+        ])
+      }
     }
 
     function getContext() {
-      document.getElementById("type").append(liff.getContext().type) 
+      document.getElementById("type").append(liff.getContext().type)
       document.getElementById("viewType").append(liff.getContext().viewType)
       document.getElementById("utouId").append(liff.getContext().utouId)
       document.getElementById("roomId").append(liff.getContext().roomId)

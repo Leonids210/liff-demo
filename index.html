@@ -56,6 +56,10 @@
     }
 
     async function shareMsg() {
+
+      liff.permanentLink.setExtraQueryParam('id=1111&test=tk')
+      const link2 = liff.permanentLink.createUrl()
+
       liff.shareTargetPicker([
         {
           type: "text",
@@ -63,7 +67,7 @@
         },
         {
           type: "text",
-          text: "Hello"
+          text: link2
         },
       ])
     }

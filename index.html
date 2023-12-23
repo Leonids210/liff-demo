@@ -52,6 +52,7 @@
 
       liff.permanentLink.setExtraQueryParam('id=1111&test=tk')
       const link2 = liff.permanentLink.createUrl()
+      document.getElementById("universalLink2").append(link2)
     }
 
     async function shareMsg() {
